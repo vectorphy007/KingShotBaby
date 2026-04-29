@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Vector",
+    "townCenter": 21,
+    "rallyCap": "225K",
+    "deploymentCap": "47K",
+    "highestTier": "T7",
+    "totalTroops": "78K",
+    "status": "active",
+    "group": "Rally Leaders",
+    "lastUpdated": "2026-04-29T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Ghost",
+    "townCenter": 19,
+    "rallyCap": "180K",
+    "deploymentCap": "35K",
+    "highestTier": "T6",
+    "totalTroops": "50K",
+    "status": "active",
+    "group": "Veterans",
+    "lastUpdated": "2026-04-28T12:00:00Z"
+  }
+]
