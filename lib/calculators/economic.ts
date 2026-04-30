@@ -38,14 +38,20 @@ export function calculateTruegoldCost(input: TruegoldCostInput): TruegoldCostOut
 }
 
 export function calculateBatchHeal(input: BatchHealInput): BatchHealOutput {
+  const treatiesAssists = Math.max(0, input.treatiesAssists);
+  const secondsPerAssist = Math.max(0, input.secondsPerAssist);
+  const totalInjuredTroops = Math.max(0, input.totalInjuredTroops);
+  const timeToHealOneTroopSeconds = Math.max(0.0001, input.timeToHealOneTroopSeconds);
+
   // Total instant heal time = treatiesAssists * secondsPerAssist
-  const totalInstantHealTimeSeconds = input.treatiesAssists * input.secondsPerAssist;
+  const totalInstantHealTimeSeconds = treatiesAssists * secondsPerAssist;
 
   // How many troops fit into this time window?
   // optimalBatchSize = totalInstantHealTime / timeToHealOneTroop
-  const optimalBatchSize = Math.floor(totalInstantHealTimeSeconds / input.timeToHealOneTroopSeconds);
+  const optimalBatchSize = Math.max(0, Math.floor(totalInstantHealTimeSeconds / timeToHealOneTroopSeconds));
 
-  const totalBatchesRequired = Math.ceil(input.totalInjuredTroops / optimalBatchSize);
+  const totalBatchesRequired =
+    optimalBatchSize > 0 ? Math.ceil(totalInjuredTroops / optimalBatchSize) : 0;
 
   return {
     optimalBatchSize,

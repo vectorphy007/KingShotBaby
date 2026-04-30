@@ -10,16 +10,17 @@ describe("Damage Calculator", () => {
       lethalityMultiplier: 1.0, // +100%
       enemyDefense: 100,
       enemyDefenseMultiplier: 1.0, // +100%
+      enemyHealth: 100,
       enemyHealthMultiplier: 1.0, // +100%
       skillModMultiplier: 1.5
     };
 
     // numerator = 100 * 100 * 2 * 2 * 1.5 = 60000
-    // denominator = 1000 * 100 * 2 * 2 = 400000
-    // casualties = 60000 / 400000 = 0.15
+    // denominator = 1000 * 100 * 100 * 2 * 2 = 40000000
+    // casualties = 60000 / 40000000 = 0.0015
 
     const result = calculateDamage(input);
-    expect(result.estimatedCasualties).toBeCloseTo(0.15);
+    expect(result.estimatedCasualties).toBeCloseTo(0.0015);
   });
 
   it("warns when troops are too high due to diminishing returns", () => {
@@ -30,6 +31,7 @@ describe("Damage Calculator", () => {
       lethalityMultiplier: 1.0,
       enemyDefense: 100,
       enemyDefenseMultiplier: 1.0,
+      enemyHealth: 100,
       enemyHealthMultiplier: 1.0,
       skillModMultiplier: 1.0
     };

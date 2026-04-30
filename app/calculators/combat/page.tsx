@@ -8,10 +8,12 @@ import { calculateDamage, recommendFormation } from "@/lib/calculators/damage";
 
 export default function CombatEngine() {
   const [troops, setTroops] = useState("10000");
+  const [baseAttack, setBaseAttack] = useState("100");
   const [attack, setAttack] = useState("200"); // percent
   const [lethality, setLethality] = useState("150"); // percent
   const [defense, setDefense] = useState("100"); // base
   const [defPercent, setDefPercent] = useState("150"); // percent
+  const [enemyHealth, setEnemyHealth] = useState("100"); // base
   const [healthPercent, setHealthPercent] = useState("200"); // percent
   const [skillMod, setSkillMod] = useState("1.5");
 
@@ -22,12 +24,12 @@ export default function CombatEngine() {
     e.preventDefault();
     const res = calculateDamage({
       troopCount: parseInt(troops),
-      baseAttack: 100, // placeholder
+      baseAttack: parseFloat(baseAttack),
       attackMultiplier: parseFloat(attack) / 100,
       lethalityMultiplier: parseFloat(lethality) / 100,
       enemyDefense: parseInt(defense),
       enemyDefenseMultiplier: parseFloat(defPercent) / 100,
-      enemyHealth: 100, // placeholder
+      enemyHealth: parseFloat(enemyHealth),
       enemyHealthMultiplier: parseFloat(healthPercent) / 100,
       skillModMultiplier: parseFloat(skillMod)
     });
@@ -50,10 +52,12 @@ export default function CombatEngine() {
         <h2 className="text-xl font-bold mb-4">Damage Estimator</h2>
         <form onSubmit={handleCalculate} className="grid grid-cols-2 gap-4">
           <Input label="Troop Count" type="number" value={troops} onChange={(e) => setTroops(e.target.value)} />
+          <Input label="Base Attack" type="number" value={baseAttack} onChange={(e) => setBaseAttack(e.target.value)} />
           <Input label="Attack Boost (%)" type="number" value={attack} onChange={(e) => setAttack(e.target.value)} />
           <Input label="Lethality Boost (%)" type="number" value={lethality} onChange={(e) => setLethality(e.target.value)} />
           <Input label="Enemy Base Defense" type="number" value={defense} onChange={(e) => setDefense(e.target.value)} />
           <Input label="Enemy Defense Boost (%)" type="number" value={defPercent} onChange={(e) => setDefPercent(e.target.value)} />
+          <Input label="Enemy Base Health" type="number" value={enemyHealth} onChange={(e) => setEnemyHealth(e.target.value)} />
           <Input label="Enemy Health Boost (%)" type="number" value={healthPercent} onChange={(e) => setHealthPercent(e.target.value)} />
           <Input label="SkillMod Multiplier" type="number" step="0.1" value={skillMod} onChange={(e) => setSkillMod(e.target.value)} />
 

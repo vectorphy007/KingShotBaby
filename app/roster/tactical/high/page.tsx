@@ -5,10 +5,11 @@ export default async function TacticalHighPage() {
   
   // Filters for the first "3" in your 1:3:3:3 composition
   const groupName = "High Power";
-// Change this line:
-const members = allMembers.filter(m => m.group === "R3" && m.status === "approved");
+  const members = allMembers.filter(
+    (m) => m.status === "approved" && (m.group === "R3" || m.rank === "R3")
+  );
   
-return (
+  return (
     <section>
       <div className="mb-10">
         <h1 className="text-4xl font-black text-white uppercase tracking-tighter italic">

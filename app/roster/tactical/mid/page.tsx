@@ -6,7 +6,9 @@ export default async function TacticalMidPage() {
   
   // 2. Filter specifically for "Mid Power" (Your 3:3:3 Joiner Group)
   const groupName = "Mid Power";
-const members = allMembers.filter(m => m.group === "R1" && m.status === "approved");
+  const members = allMembers.filter(
+    (m) => m.status === "approved" && (m.group === "R2" || m.rank === "R2")
+  );
 
   return (
     <section>

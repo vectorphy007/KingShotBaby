@@ -21,10 +21,10 @@ export function calculateDamage(input: DamageInput): DamageOutput {
   // Numerator: sqrt(troops) * Base_Attack * (1 + Attack%) * (1 + Lethality%) * SkillMod
   const numerator = Math.sqrt(troopCount) * baseAttack * (1 + attackMultiplier) * (1 + lethalityMultiplier) * skillModMultiplier;
 
-  // Denominator: K * Base_Defense * (1 + Defense%) * (1 + Health%)
+  // Denominator: K * Base_Defense * Base_Health * (1 + Defense%) * (1 + Health%)
   // Capping Defense efficiency at approx +200% (3.0 multiplier limit as heuristic if needed, but per research, it's a logarithmic curve in reality)
   // We use the basic mathematical interpretation provided in the report
-  const denominator = CONST_K * enemyDefense * (1 + enemyDefenseMultiplier) * (1 + enemyHealthMultiplier);
+  const denominator = CONST_K * enemyDefense * enemyHealth * (1 + enemyDefenseMultiplier) * (1 + enemyHealthMultiplier);
 
   let estimatedCasualties = 0;
   if (denominator > 0) {
