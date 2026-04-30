@@ -17,15 +17,37 @@ export default function Sidebar({ className = "", isOpen = false, onClose }: Sid
     { name: "Admin", path: "/admin" },
   ];
 
-  // Mobile overlay classes
-  const mobileClasses = isOpen 
-    ? "fixed inset-y-0 left-0 z-40 w-64 overflow-y-auto" 
-    : "hidden";
-
   return (
-    <aside className={`bg-secondary border-r border-slate-700 flex flex-col p-4 md:relative ${className} ${mobileClasses}`}>
-      <div className="mb-8">
-        <h1 className="text-xl font-bold text-accent-gold">Kingshot Command</h1>
+    <aside 
+      className={`
+        fixed top-0 left-0 h-full w-72 bg-secondary border-r border-slate-700 
+        flex flex-col px-4 sm:px-6 py-8 z-50
+        transform transition-transform duration-300 ease-in-out
+        ${isOpen ? "translate-x-0" : "-translate-x-full"}
+        md:translate-x-0 md:static md:h-auto md:w-64 md:flex
+        md:flex-shrink-0 overflow-y-auto
+        ${className}
+      `}
+    >
+      {/* Close button - mobile only */}
+      <button
+        onClick={onClose}
+        className="md:hidden absolute top-4 right-4 p-2 hover:bg-slate-700/40 rounded-lg transition-colors"
+        aria-label="Close sidebar"
+      >
+        <svg 
+          className="w-6 h-6 text-foreground" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div className="mb-12">
+        <h1 className="text-2xl font-semibold tracking-tight text-accent-gold">Kingshot</h1>
+        <p className="text-xs text-accent-muted mt-1">Alliance Command</p>
       </div>
       <nav className="flex flex-col gap-2">
         {links.map((link) => (
@@ -33,7 +55,7 @@ export default function Sidebar({ className = "", isOpen = false, onClose }: Sid
             key={link.path}
             href={link.path}
             onClick={onClose}
-            className="px-4 py-2 rounded-lg hover:bg-card text-foreground transition-colors"
+            className="px-4 py-3 rounded-xl hover:bg-slate-700/60 text-foreground transition-all duration-200 text-sm font-medium hover:text-accent-gold"
           >
             {link.name}
           </Link>

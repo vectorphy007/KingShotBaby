@@ -1,0 +1,15 @@
+{
+  "accuracy": 0.9166666666666666,
+  "feature_importance": {
+    "powerScore": 0.0,
+    "troopDensity": 0.0,
+    "heroBuffTotal": 0.0,
+    "synergyScore": 0.0,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.0,
+    "rallyCapacity": 0.0,
+    "deploymentEfficiency": 0.0
+  },
+  "model_file": "/workspaces/KingShotBaby/ml/model.pkl",
+  "fallback_used": true
+}

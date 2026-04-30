@@ -1,0 +1,134 @@
+[
+  {
+    "powerScore": 0.92,
+    "troopDensity": 0.54,
+    "heroBuffTotal": 0.88,
+    "synergyScore": 0.94,
+    "leaderStrength": 1.0,
+    "joinerStrength": 0.67,
+    "rallyCapacity": 0.91,
+    "deploymentEfficiency": 0.52,
+    "result": 1
+  },
+  {
+    "powerScore": 0.71,
+    "troopDensity": 0.46,
+    "heroBuffTotal": 0.69,
+    "synergyScore": 0.73,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.58,
+    "rallyCapacity": 0.72,
+    "deploymentEfficiency": 0.41,
+    "result": 1
+  },
+  {
+    "powerScore": 0.42,
+    "troopDensity": 0.28,
+    "heroBuffTotal": 0.36,
+    "synergyScore": 0.34,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.33,
+    "rallyCapacity": 0.44,
+    "deploymentEfficiency": 0.29,
+    "result": 0
+  },
+  {
+    "powerScore": 0.37,
+    "troopDensity": 0.35,
+    "heroBuffTotal": 0.31,
+    "synergyScore": 0.27,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.25,
+    "rallyCapacity": 0.39,
+    "deploymentEfficiency": 0.31,
+    "result": 0
+  },
+  {
+    "powerScore": 0.83,
+    "troopDensity": 0.57,
+    "heroBuffTotal": 0.8,
+    "synergyScore": 0.86,
+    "leaderStrength": 1.0,
+    "joinerStrength": 0.62,
+    "rallyCapacity": 0.85,
+    "deploymentEfficiency": 0.49,
+    "result": 1
+  },
+  {
+    "powerScore": 0.55,
+    "troopDensity": 0.49,
+    "heroBuffTotal": 0.51,
+    "synergyScore": 0.58,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.51,
+    "rallyCapacity": 0.57,
+    "deploymentEfficiency": 0.38,
+    "result": 0
+  },
+  {
+    "powerScore": 0.61,
+    "troopDensity": 0.52,
+    "heroBuffTotal": 0.6,
+    "synergyScore": 0.64,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.55,
+    "rallyCapacity": 0.63,
+    "deploymentEfficiency": 0.44,
+    "result": 1
+  },
+  {
+    "powerScore": 0.48,
+    "troopDensity": 0.33,
+    "heroBuffTotal": 0.42,
+    "synergyScore": 0.45,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.37,
+    "rallyCapacity": 0.5,
+    "deploymentEfficiency": 0.34,
+    "result": 0
+  },
+  {
+    "powerScore": 0.76,
+    "troopDensity": 0.61,
+    "heroBuffTotal": 0.74,
+    "synergyScore": 0.79,
+    "leaderStrength": 1.0,
+    "joinerStrength": 0.64,
+    "rallyCapacity": 0.77,
+    "deploymentEfficiency": 0.53,
+    "result": 1
+  },
+  {
+    "powerScore": 0.34,
+    "troopDensity": 0.26,
+    "heroBuffTotal": 0.3,
+    "synergyScore": 0.22,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.22,
+    "rallyCapacity": 0.35,
+    "deploymentEfficiency": 0.24,
+    "result": 0
+  },
+  {
+    "powerScore": 0.68,
+    "troopDensity": 0.5,
+    "heroBuffTotal": 0.65,
+    "synergyScore": 0.69,
+    "leaderStrength": 1.0,
+    "joinerStrength": 0.59,
+    "rallyCapacity": 0.69,
+    "deploymentEfficiency": 0.45,
+    "result": 1
+  },
+  {
+    "powerScore": 0.29,
+    "troopDensity": 0.21,
+    "heroBuffTotal": 0.25,
+    "synergyScore": 0.2,
+    "leaderStrength": 0.0,
+    "joinerStrength": 0.18,
+    "rallyCapacity": 0.3,
+    "deploymentEfficiency": 0.17,
+    "result": 0
+  }
+]

@@ -31,6 +31,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:seed": "node upload-mock.js"
+    "db:seed": "node upload-mock.js",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "ml:features": "python ml/features.py",
+    "ml:train": "python ml/train.py",
+    "test:py": "pytest tests/test_ml_pipeline.py"
   }
 }

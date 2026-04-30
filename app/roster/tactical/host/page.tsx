@@ -5,7 +5,9 @@ export default async function TacticalHostPage() {
   
   // Filters for the "1" in your 1:3:3:3 composition
   const groupName = "Rally Host";
-  const members = allMembers.filter(m => m.group === groupName && m.status === "approved");
+  const members = allMembers.filter(
+    (m) => m.status === "approved" && (m.group === groupName || m.rank === groupName)
+  );
 
   return (
     <section>

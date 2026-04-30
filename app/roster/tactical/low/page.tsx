@@ -5,7 +5,9 @@ export default async function TacticalLowPage() {
   
   // Filters for the final "3" in your 1:3:3:3 composition
   const groupName = "Low Power";
- const members = allMembers.filter(m => m.group === "R2" && m.status === "approved");
+  const members = allMembers.filter(
+    (m) => m.status === "approved" && (m.group === "R1" || m.rank === "R1")
+  );
 
   return (
     <section>

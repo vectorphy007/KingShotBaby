@@ -156,22 +156,26 @@ export async function updateSubmissionStatus(
 
 export async function rebalanceDatabase(): Promise<{ success: boolean; message: string }> {
   const submissions = await getSubmissions();
+  const approvedMembers = submissions.filter((member) => member.status === "approved");
   
-  if (submissions.length < 4) {
+  if (approvedMembers.length < 4) {
     return { 
       success: false, 
-      message: "Insufficient data. Need at least 4 members for R-Rank clustering." 
+      message: "Insufficient approved data. Need at least 4 approved members for R-Rank clustering." 
     };
   }
 
-  // ML K-Means sorts members into R3, R2, and R1 based on power
-  const automaticallySortedMembers = autoClassifyRoster(submissions as any);
+  // ML K-Means sorts approved members into Rally Host, R3, R2, and R1 based on power.
+  const automaticallySortedMembers = autoClassifyRoster(approvedMembers as any);
 
   // Sync Rank with the new Tactical Group for all non-leadership members
-  const syncedMembers = automaticallySortedMembers.map(member => ({
+  const syncedApprovedMembers = automaticallySortedMembers.map(member => ({
     ...member,
     rank: member.rank === "Leadership" ? "Leadership" : member.group
   }));
+
+  const syncedById = new Map(syncedApprovedMembers.map((member) => [member.id, member]));
+  const syncedMembers = submissions.map((member) => syncedById.get(member.id) ?? member);
 
   if (useKV()) {
     await kvSet("submissions", syncedMembers);
