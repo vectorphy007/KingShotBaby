@@ -213,3 +213,54 @@ function getDefaultAnnouncements(): Announcement[] {
     },
   ];
 }
+
+// ─── KINGSHOT GAME DATABASE (EXTRACTED ENTITIES) ──────────────────────────────
+
+export interface BaseGameEntity {
+  name: string;
+  url: string;
+  localImagePath?: string;
+  [key: string]: any; // Allows dynamic stats (HeroAttack, drop rates, multi-level tables, etc.)
+}
+
+export interface HeroData extends BaseGameEntity {
+  troopType: string;
+  rarity: string;
+  generation: number | null;
+  unlockMethod?: string;
+}
+
+export interface MasterData extends BaseGameEntity {
+  unlockTiming: string | number;
+}
+
+export interface BuildingData extends BaseGameEntity {
+  maxStandardLevel: string | number;
+  maxTruegoldLevel: string;
+}
+
+export interface EventData extends BaseGameEntity {}
+
+export interface KingshotGameData {
+  heroes: HeroData[];
+  masters: MasterData[];
+  buildings: BuildingData[];
+  events: EventData[];
+}
+
+const GAME_DATA_FILE = path.join(DATA_DIR, "kingshot_database.json");
+
+export async function getKingshotGameData(): Promise<KingshotGameData | null> {
+  if (useKV()) {
+    return await kvGet<KingshotGameData>("kingshot_game_data");
+  }
+  return localRead<KingshotGameData | null>(GAME_DATA_FILE, null);
+}
+
+export async function saveKingshotGameData(data: KingshotGameData): Promise<void> {
+  if (useKV()) {
+    await kvSet("kingshot_game_data", data);
+  } else {
+    localWrite(GAME_DATA_FILE, data);
+  }
+}

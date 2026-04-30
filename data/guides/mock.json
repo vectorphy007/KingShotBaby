@@ -1,7 +1,32 @@
 [
   {
     "id": "g1",
-    "title": "Hero Guide",
-    "content": "Use these heroes for best rally results."
+    "title": "Hero Guide: Leaders vs Joiners",
+    "content": "Rally Leaders contribute full stats, gear, and all hero skills to a march. Rally Joiners contribute only the first expedition skill of their leftmost hero, and only the top 4 unique joiner skills apply. Focus on leveling 'S-Tier' joiners like Chenko for guaranteed Lethality buffs."
+  },
+  {
+    "id": "g2",
+    "title": "Bear Hunt Optimization",
+    "content": "Maximize damage by prioritizing Archers, shifting from a 10/30/60 ratio in early generations toward 1/10/89 for late-game builds. Ensure the four active joiner skills are unique (e.g., Chenko, Amadeus, and Yeonwoo) to ensure buffs compound rather than overwrite."
+  },
+  {
+    "id": "g3",
+    "title": "Alliance Championship Formations",
+    "content": "Use a 5:2:3 ratio (50% Infantry, 20% Cavalry, 30% Archers) for a balanced defense and offense. Adopt the '2-1 Lane approach' by concentrating your strongest members in two lanes to secure a victory while sacrificing the third lane with low-power units."
+  },
+  {
+    "id": "g4",
+    "title": "Viking Vengeance Strategy",
+    "content": "Implement the 'Empty City' rule: send all troops to reinforce allies so you receive defense points while your reinforcers get kill points, effectively doubling the alliance's total score. Recall your strongest marches after Waves 9 and 19 to defend the Alliance HQ."
+  },
+  {
+    "id": "g5",
+    "title": "Truegold and T11 Progression",
+    "content": "Upon reaching Town Center 30, the progression shifts to the Age of Truegold. Focus your Truegold investments on the War Academy to unlock Tier 11 (T11) troops. It is more effective to master one T11 type (like Infantry Helios) first than to spread resources across all three types."
+  },
+  {
+    "id": "g6",
+    "title": "Eternity’s Reach: The Vein Tap",
+    "content": "Focus on Copper Ore accumulation by using the 'Vein Tap' strategy: occupy a vein to trigger the Level 3 (Left) skill for 5,000 instant ore, then recall and repeat every 60 seconds. Prioritize hunting Cesare’s Guards in the first 5 minutes to unlock your skill tree."
   }
 ]
